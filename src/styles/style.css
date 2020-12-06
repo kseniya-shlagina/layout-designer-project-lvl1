@@ -12,7 +12,7 @@
   --translucent-dark: #908d8b;
   --brown: #b09a81;
   --blue: #1085c5;
-  --main-text: #2A2626;
+  --main-text: #2a2626;
 }
 
 /* tags */
@@ -24,13 +24,20 @@ body {
   color: var(--main-text);
 }
 
-h1, h2, h3 {
+header {
+  display: block;
+}
+
+h1,
+h2,
+h3 {
   font-family: 'Neucha', cursive;
   line-height: 1.2em;
 }
 
 h1 {
   font-size: 72px;
+  margin-bottom: 225px;
 }
 
 h2 {
@@ -42,12 +49,82 @@ h3 {
 }
 
 section {
-  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1110px;
   padding: 100px;
-  text-align: center;
-
 }
 
+section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000px;
+  width: 100%;
+  background-color: var(--light);
+  content: '';
+  z-index: -2;
+}
 
+section::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000px;
+  width: 100%;
+  background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 10%;
+  content: '';
+  z-index: -1;
+}
 
-/* 
+/* classes */
+
+.text-orange {
+  color: var(--main);
+}
+
+section.background-dark::before {
+  background-color: var(--brown);
+}
+
+.header-image {
+  position: absolute;
+  height: 525px;
+  top: 55px;
+  right: 0;
+}
+
+.text-block {
+  width: 540px;
+}
+
+.text-blocks-container {
+  display: flex;
+}
+
+.button {
+  display: block;
+  max-width: 101px;
+  padding: 12px 24px;
+  background-color: var(--main);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* common */
+
+.text-left {
+  text-align: left;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mt-38 {
+  margin-top: 38px;
+}
